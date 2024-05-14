@@ -1,0 +1,39 @@
+﻿@model List<LearnerProject.Models.Entities.Banner>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+<br />
+<h3>Öne Çıkan Sayfası</h3>
+<br />
+
+<table class="table table-bordered table-hover">
+
+    <tr>
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.Title</td>
+            <td>
+                <a href="/Banner/DeleteBanner/@item.BannerID" class="btn btn-outline-danger"><i class="fas fa-trash"></i></a>
+               
+            </td>
+            <td>
+                <a href="/Banner/UpdateBanner/@item.BannerID" class="btn btn-outline-info"><i class="fas fa-edit"></i></a>
+            </td>
+        </tr>
+    }
+
+</table>
+
+<a href="/Banner/AddBanner" class="btn btn-outline-success"> Yeni Öne çıkan Ekle</a>
+

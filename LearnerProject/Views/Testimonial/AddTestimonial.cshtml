@@ -1,0 +1,32 @@
+﻿@model LearnerProject.Models.Entities.Testimonial
+@{
+    ViewBag.Title = "AddTestimonial";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<br />
+<h3>Yeni Referans Ekleme Sayfası</h3>
+<br />
+
+<form method="post">
+    <label>Ad Soyad</label>
+    @Html.TextBoxFor(x=>x.NameSurname, new {@class="form-control", @placeholder="Ad Soyad giriniz"})
+    <br />
+    <label>Başlık</label>
+    @Html.TextBoxFor(x=>x.Title, new {@class="form-control" , @placeholder="Başlık giriniz"})
+    <br />
+    <label>Resim Url</label>
+    @Html.TextBoxFor(x=>x.ImageUrl, new {@class="form-control", @placeholder="Resim Url giriniz"})
+    <br />
+    <label>Yorum</label>
+    @Html.TextBoxFor(x => x.Comment, new {@class="form-control", @placeholder="Yorum giriniz"})
+
+    <br />
+    <button class="btn btn-outline-primary">Kaydet</button>
+
+
+
+
+
+
+
+</form>

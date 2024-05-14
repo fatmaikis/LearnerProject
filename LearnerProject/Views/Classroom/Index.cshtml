@@ -1,0 +1,41 @@
+﻿@model List<LearnerProject.Models.Classroom>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+<br />
+<h2>Sınıflar Sayfası</h2>
+<br />
+<table class="table table-bordered table-hover">
+
+   <tr>
+       <td>#</td>
+       <td>Sınıf Adı</td>
+       <td>Icon</td>
+       <td>Açıklama</td>
+       <td>Sil</td>
+       <td>Güncelle</td>
+   </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.Name</td>
+            <td>@item.Icon</td>
+            <td>@item.Description</td>
+           <td>
+               <a href="/Classroom/DeleteClassroom/@item.ClassroomID" class="btn btn-outline-danger"><i class="fas fa-trash"></i></a>
+              
+           </td>
+           <td>
+               <a href="/Classroom/UpdateClassroom/@item.ClassroomID" class="btn btn-outline-info"><i class="fas fa-edit"></i></a>
+           </td>
+        </tr>
+    }
+
+</table>
+
+<a href="/Classroom/AddClassroom/" class="btn btn-outline-success">Sınıf Bilgisi Ekle</a>

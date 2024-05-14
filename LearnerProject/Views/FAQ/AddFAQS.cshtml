@@ -1,0 +1,22 @@
+﻿@model LearnerProject.Models.Entities.FAQ
+@{
+    ViewBag.Title = "AddFAQS";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<br />
+<h3>Soru Ekleme Sayfası</h3>
+<br />
+
+<form method="post">
+    <label>Soru</label>
+    @Html.TextBoxFor(x => x.Question, new { @class = "form-control", @placeholder = "Soru giriniz." })
+    <br />
+    <label>Cevap</label>
+    @Html.TextBoxFor(x => x.Answer, new { @class = "form-control", @placeholder = "Cevap giriniz." })
+    <br />
+    <label>Resim</label>
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control", @placeholder = "Resim giriniz." })
+    <br />
+    <button class="btn btn-outline-primary">Kaydet</button>
+
+</form>
